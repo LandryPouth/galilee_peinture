@@ -21,7 +21,7 @@ export function Projects() {
       id: 2,
       title: t("items.residence_bastos.title"),
       location: t("items.residence_bastos.location"),
-      image: "https://images.unsplash.com/photo-1464195157367-2d76e721c215?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop",
       description: t("items.residence_bastos.description"),
     },
     {

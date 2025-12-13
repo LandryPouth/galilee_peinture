@@ -31,7 +31,7 @@ const SLIDES = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1549887534-1541e9326642?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2070&auto=format&fit=crop",
     keywords: "Innovation, Qualité, Durable",
     title: "Donnez Vie à Vos Murs",
     subtitle: "Spécialistes en peinture décorative et revêtements muraux",

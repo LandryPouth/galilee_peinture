@@ -13,7 +13,7 @@ export function Invest() {
       {/* Background Image Overlay */}
       <div className="absolute inset-0 opacity-30">
         <Image
-          src="https://images.unsplash.com/photo-1574359411659-15573a21bc2c?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2070&auto=format&fit=crop"
           alt="Peinture Artistique"
           fill
           className="object-cover"

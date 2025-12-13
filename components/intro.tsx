@@ -40,7 +40,7 @@ export function Intro() {
           >
             <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1594913785162-e6785f86e927?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1558211583-d26f610c1eb1?q=80&w=2070&auto=format&fit=crop"
                 alt="Peintre au travail"
                 fill
                 className="object-cover"
