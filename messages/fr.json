@@ -1,0 +1,76 @@
+{
+  "Header": {
+    "home": "ACCUEIL",
+    "projects": "RÉALISATIONS",
+    "expertise": "EXPERTISE",
+    "invest": "POURQUOI NOUS ?",
+    "contact": "CONTACT"
+  },
+  "Hero": {
+    "title": "GALILÉE PEINTURE",
+    "subtitle": "L'ART DE SUBLIMER VOS MURS AVEC PASSION"
+  },
+  "Intro": {
+    "title": "À PROPOS DE NOUS",
+    "subtitle": "GALILÉE PEINTURE",
+    "description1": "Chez Galilée Peinture, nous ne faisons pas que peindre des murs, nous créons des atmosphères. Forts de notre expertise dans la peinture murale et décorative, nous transformons chaque espace en une œuvre d'art, alliant technicité et esthétique.",
+    "description2": "Que ce soit pour des projets résidentiels haut de gamme ou des espaces commerciaux, notre équipe de peintres qualifiés utilise des matériaux de première qualité pour garantir des finitions impeccables et durables."
+  },
+  "Projects": {
+    "title": "NOS RÉALISATIONS",
+    "discover": "DÉCOUVRIR",
+    "items": {
+      "villa_bonapriso": {
+        "title": "RÉNOVATION VILLA LES COCOTIERS",
+        "location": "Douala, Bonapriso",
+        "description": "Transformation complète des espaces intérieurs avec des teintes chaudes et apaisantes."
+      },
+      "residence_bastos": {
+        "title": "FRESQUE MURALE HALL D'ENTRÉE",
+        "location": "Yaoundé, Bastos",
+        "description": "Création d'une fresque artistique sur mesure pour le hall d'entrée d'un complexe résidentiel."
+      },
+      "jardins_kribi": {
+        "title": "REVÊTEMENT DÉCORATIF LOFT",
+        "location": "Kribi, Centre",
+        "description": "Application d'un enduit décoratif effet béton ciré pour un loft industriel."
+      }
+    }
+  },
+  "Expertise": {
+    "title": "NOTRE EXPERTISE",
+    "items": {
+      "promotion": {
+        "title": "PEINTURE INTÉRIEURE",
+        "description": "Application soignée de peintures acryliques, alkydes et écologiques pour sublimer vos pièces de vie."
+      },
+      "gestion": {
+        "title": "ENDUITS DÉCORATIFS",
+        "description": "Maîtrise des techniques de stucco, chaux, béton ciré et effets de matière pour des murs uniques."
+      },
+      "architecture": {
+        "title": "PEINTURE EXTÉRIEURE",
+        "description": "Protection et embellissement de vos façades avec des produits résistants aux intempéries."
+      },
+      "conseil": {
+        "title": "CONSEIL DÉCO",
+        "description": "Accompagnement personnalisé dans le choix des couleurs et des harmonies pour créer l'ambiance idéale."
+      }
+    }
+  },
+  "Invest": {
+    "title": "POURQUOI NOUS CHOISIR ?",
+    "description": "Parce que vos murs méritent l'exception. Nous allions savoir-faire traditionnel et techniques innovantes pour donner vie à vos projets les plus audacieux. Qualité, respect des délais et propreté du chantier sont nos maîtres-mots.",
+    "button": "DEMANDER UN DEVIS"
+  },
+  "Footer": {
+    "brand_description": "Votre partenaire de confiance pour tous vos travaux de peinture et décoration au Cameroun. L'excellence au service de vos murs.",
+    "contact_title": "NOUS CONTACTER",
+    "links_title": "LIENS RAPIDES",
+    "home": "Accueil",
+    "projects": "Réalisations",
+    "expertise": "Expertise",
+    "invest": "Pourquoi Nous ?",
+    "copyright": "© {year} Galilée Peinture. Tous droits réservés."
+  }
+}

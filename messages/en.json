@@ -1,0 +1,76 @@
+{
+  "Header": {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "expertise": "EXPERTISE",
+    "invest": "INVEST",
+    "contact": "CONTACT"
+  },
+  "Hero": {
+    "title": "ADONAI SERVICE",
+    "subtitle": "HIGH-END REAL ESTATE IN CAMEROON"
+  },
+  "Intro": {
+    "title": "THE ART OF LIVING",
+    "subtitle": "PAR EXCELLENCE",
+    "description1": "Adonai Service redefines luxury real estate in Cameroon. We create unique living spaces that combine contemporary elegance, absolute comfort, and prime locations.",
+    "description2": "Each project is a work of art, designed to offer an unparalleled residential experience, where every detail has been thought out for your well-being."
+  },
+  "Projects": {
+    "title": "OUR LATEST PROJECTS",
+    "discover": "DISCOVER",
+    "items": {
+      "villa_bonapriso": {
+        "title": "VILLA BONAPRISO",
+        "location": "Douala, Cameroon",
+        "description": "An exclusive residence in the heart of Bonapriso."
+      },
+      "residence_bastos": {
+        "title": "BASTOS RESIDENCE",
+        "location": "Yaoundé, Cameroon",
+        "description": "Urban luxury and breathtaking city views."
+      },
+      "jardins_kribi": {
+        "title": "GARDENS OF KRIBI",
+        "location": "Kribi, Cameroon",
+        "description": "Your haven of peace by the sea."
+      }
+    }
+  },
+  "Expertise": {
+    "title": "OUR EXPERTISE",
+    "items": {
+      "promotion": {
+        "title": "REAL ESTATE DEVELOPMENT",
+        "description": "Design and realization of exceptional residential projects."
+      },
+      "gestion": {
+        "title": "RENTAL MANAGEMENT",
+        "description": "Rigorous and transparent management of your real estate assets."
+      },
+      "architecture": {
+        "title": "ARCHITECTURE & DESIGN",
+        "description": "Creation of unique spaces combining aesthetics and functionality."
+      },
+      "conseil": {
+        "title": "INVESTMENT ADVICE",
+        "description": "Personalized support to optimize your assets."
+      }
+    }
+  },
+  "Invest": {
+    "title": "WHY INVEST IN CAMEROON?",
+    "description": "A growing economy, recognized political stability, and a dynamic real estate market make Cameroon a privileged destination for savvy investors.",
+    "button": "LEARN MORE"
+  },
+  "Footer": {
+    "brand_description": "Real estate excellence in Cameroon. We turn your dreams into reality with passion and professionalism.",
+    "contact_title": "CONTACT",
+    "links_title": "USEFUL LINKS",
+    "home": "Home",
+    "projects": "Our Projects",
+    "expertise": "Our Expertise",
+    "invest": "Invest",
+    "copyright": "© {year} Adonai Service. All rights reserved."
+  }
+}
