@@ -16,6 +16,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "./language-switcher";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({ subsets: ["latin"] });
 
 const navItems = [
   { name: "home", href: "#home" },
@@ -150,8 +153,14 @@ export function Header() {
         )}
       >
         <div className="container mx-auto flex items-center justify-between px-4 md:px-8">
-          <Link href="/" className={cn("text-2xl font-bold tracking-widest uppercase", isScrolled ? "text-black" : "text-white")}>
-            GALILÉE PEINTURE
+          <Link href="/" className={cn(
+            "text-4xl font-bold tracking-tight",
+            playfair.className,
+            isScrolled 
+              ? "bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent" 
+              : "bg-gradient-to-r from-white via-blue-100 to-gray-200 bg-clip-text text-transparent drop-shadow-sm"
+          )}>
+            GP
           </Link>
 
           {/* Desktop Navigation */}
@@ -198,10 +207,10 @@ export function Header() {
         </div>
       </header>
 
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
-        langSwitcher={<LanguageSwitcherMobile />} 
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        langSwitcher={<LanguageSwitcherMobile />}
       />
     </>
   );
