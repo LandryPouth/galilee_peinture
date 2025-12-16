@@ -4,6 +4,7 @@ import * as React from "react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "motion/react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,14 +12,22 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
-import { LanguageSwitcher } from "./language-switcher";
+import { Menu, X } from "lucide-react";
+import { LanguageSwitcher, LanguageSwitcherMobile } from "./language-switcher";
+
+const navItems = [
+  { name: "home", href: "#home" },
+  { name: "projects", href: "#projects" },
+  { name: "expertise", href: "#expertise" },
+  { name: "invest", href: "#invest" },
+  { name: "contact", href: "#contact" },
+];
 
 export function Header() {
   const t = useTranslations("Header");
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +36,16 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   return (
     <header
@@ -44,77 +63,118 @@ export function Header() {
         <div className="hidden md:flex items-center gap-6">
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
-                  <Link href="#home">
-                    {t("home")}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
-                  <Link href="#projects">
-                    {t("projects")}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
-                  <Link href="#expertise">
-                    {t("expertise")}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
-                  <Link href="#invest">
-                    {t("invest")}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
-                  <Link href="#contact">
-                    {t("contact")}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "bg-transparent hover:bg-transparent",
+                      isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200"
+                    )}
+                    asChild
+                  >
+                    <Link href={item.href}>
+                      {t(item.name)}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <LanguageSwitcher />
+          <LanguageSwitcher isScrolled={isScrolled} />
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center gap-4">
-          <LanguageSwitcher />
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                <Link href="#home" className="text-lg font-medium hover:text-gray-600">
-                  {t("home")}
-                </Link>
-                <Link href="#projects" className="text-lg font-medium hover:text-gray-600">
-                  {t("projects")}
-                </Link>
-                <Link href="#expertise" className="text-lg font-medium hover:text-gray-600">
-                  {t("expertise")}
-                </Link>
-                <Link href="#invest" className="text-lg font-medium hover:text-gray-600">
-                  {t("invest")}
-                </Link>
-                <Link href="#contact" className="text-lg font-medium hover:text-gray-600">
-                  {t("contact")}
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleMenu}
+            aria-label="Ouvrir le menu"
+            aria-expanded={isMenuOpen}
+            className={cn(isScrolled ? "text-black" : "text-white")}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
       </div>
+
+      {/* Mobile Menu - Side Drawer */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={closeMenu}
+            />
+
+            {/* Side Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 z-50 h-full w-[280px] bg-white/95 backdrop-blur-xl shadow-2xl md:hidden"
+            >
+              <div className="flex h-full flex-col">
+                {/* Drawer Header */}
+                <div className="flex items-center justify-between border-b border-gray-200 px-6 py-6">
+                  <span className="text-lg font-bold tracking-wide text-black">MENU</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={closeMenu}
+                    aria-label="Fermer le menu"
+                    className="text-black hover:bg-gray-100"
+                  >
+                    <X className="h-5 w-5" />
+                  </Button>
+                </div>
+
+                {/* Navigation Links */}
+                <nav className="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-6">
+                  {navItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                    >
+                      <Link
+                        href={item.href}
+                        className="group relative block rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-black"
+                        onClick={closeMenu}
+                      >
+                        <span className="relative z-10">{t(item.name)}</span>
+                        <motion.div
+                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 opacity-0 group-hover:opacity-100"
+                          initial={false}
+                          transition={{ duration: 0.2 }}
+                        />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
+
+                {/* Drawer Footer */}
+                <div className="border-t border-gray-200 py-4">
+                  <LanguageSwitcherMobile />
+                  <div className="mt-4 px-6">
+                    <p className="text-xs text-gray-500 text-center">
+                      © 2024 Galilée Peinture
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
