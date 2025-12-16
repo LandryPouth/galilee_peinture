@@ -9,10 +9,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 const SLIDES = [
   {
@@ -44,7 +44,7 @@ export function HeroCarousel() {
   const [count, setCount] = React.useState(0)
 
   const plugin = React.useRef(
-    Autoplay({ delay: 8000, stopOnInteraction: false })
+    Autoplay({ delay: 5000, stopOnInteraction: false })
   )
 
   React.useEffect(() => {
@@ -112,9 +112,7 @@ export function HeroCarousel() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  <Button size="lg" className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-6 rounded-full" asChild>
-                    <a href="#projects">Découvrir nos réalisations</a>
-                  </Button>
+                  <Link className={cn(buttonVariants({ size: "lg" }), "bg-white text-black hover:bg-gray-200 text-lg px-8 py-6 rounded-full")} href="#projects">Découvrir nos réalisations</Link>
                 </motion.div>
               </div>
             </CarouselItem>
@@ -124,26 +122,49 @@ export function HeroCarousel() {
 
       {/* Slide Numbers */}
       <div className="absolute bottom-10 right-10 flex items-end gap-2 z-20 text-white">
-        <span className="text-4xl font-bold leading-none">
+        <span className="text-3xl font-bold leading-none">
           {String(current + 1).padStart(2, '0')}
         </span>
-        <span className="text-xl leading-none pb-1 text-gray-300">
+        <span className="text-lg leading-none pb-1 text-gray-300">
           / {String(count).padStart(2, '0')}
         </span>
       </div>
 
       {/* Custom Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
-            className={`h-1 transition-all duration-300 rounded-full ${index === current ? "w-12 bg-white" : "w-8 bg-white/40 hover:bg-white/60"
+            className={`hover:cursor-pointer h-1.5 transition-all duration-300 rounded-full relative overflow-hidden ${index === current ? "w-10 bg-white/40" : "w-1.5 bg-white/40 hover:bg-white/60"
               }`}
             onClick={() => api?.scrollTo(index)}
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            {index === current && (
+              <span
+                key={`progress-${current}`}
+                className="absolute inset-0 bg-white rounded-full origin-left"
+                style={{
+                  animation: 'fillProgress 5000ms linear forwards'
+                }}
+              />
+            )}
+          </button>
         ))}
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes fillProgress {
+            from {
+              transform: scaleX(0);
+            }
+            to {
+              transform: scaleX(1);
+            }
+          }
+        `
+      }} />
     </div>
   )
 }
