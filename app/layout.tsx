@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adonai Service",
-  description: "Immobilier haut de gamme au Cameroun",
+  title: "Galilée Peinture Developer",
+  description: "Peinture haut de gamme au Cameroun",
 };
 
 export default function RootLayout({

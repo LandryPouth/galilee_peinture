@@ -7,13 +7,13 @@
     "contact": "CONTACT"
   },
   "Hero": {
-    "title": "ADONAI SERVICE",
-    "subtitle": "HIGH-END REAL ESTATE IN CAMEROON"
+    "title": "GALILEE PEINTURE DEVELOPER",
+    "subtitle": "HIGH-END PAINTING IN CAMEROON"
   },
   "Intro": {
     "title": "THE ART OF LIVING",
     "subtitle": "PAR EXCELLENCE",
-    "description1": "Adonai Service redefines luxury real estate in Cameroon. We create unique living spaces that combine contemporary elegance, absolute comfort, and prime locations.",
+    "description1": "Galilée Peinture Developer redefines luxury real estate in Cameroon. We create unique living spaces that combine contemporary elegance, absolute comfort, and prime locations.",
     "description2": "Each project is a work of art, designed to offer an unparalleled residential experience, where every detail has been thought out for your well-being."
   },
   "Projects": {
@@ -41,19 +41,19 @@
     "title": "OUR EXPERTISE",
     "items": {
       "promotion": {
-        "title": "REAL ESTATE DEVELOPMENT",
+        "title": "PAINTING DEVELOPMENT",
         "description": "Design and realization of exceptional residential projects."
       },
       "gestion": {
-        "title": "RENTAL MANAGEMENT",
+        "title": "PAINTING MANAGEMENT",
         "description": "Rigorous and transparent management of your real estate assets."
       },
       "architecture": {
-        "title": "ARCHITECTURE & DESIGN",
+        "title": "PAINTING ARCHITECTURE & DESIGN",
         "description": "Creation of unique spaces combining aesthetics and functionality."
       },
       "conseil": {
-        "title": "INVESTMENT ADVICE",
+        "title": "PAINTING ADVICE",
         "description": "Personalized support to optimize your assets."
       }
     }
@@ -71,6 +71,6 @@
     "projects": "Our Projects",
     "expertise": "Our Expertise",
     "invest": "Invest",
-    "copyright": "© {year} Adonai Service. All rights reserved."
+    "copyright": "© {year} Galilée Peinture Developer. All rights reserved."
   }
 }

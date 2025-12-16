@@ -61,18 +61,18 @@ export function HeroCarousel() {
   }, [api])
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full h-dvh overflow-hidden">
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
-        className="w-full h-full min-h-screen"
+        className="w-full h-full"
         opts={{
           loop: true,
         }}
       >
-        <CarouselContent className="h-full min-h-screen -ml-0">
+        <CarouselContent className="h-full ml-0">
           {SLIDES.map((slide) => (
-            <CarouselItem key={slide.id} className="pl-0 h-full min-h-screen relative">
+            <CarouselItem key={slide.id} className="pl-0 h-full relative">
               <div className="absolute inset-0">
                 <Image
                   src={slide.image}
@@ -82,7 +82,7 @@ export function HeroCarousel() {
                   priority={slide.id === 1}
                 />
               </div>
-              <div className="relative z-10 h-full min-h-screen flex flex-col items-center justify-center text-center text-white px-4">
+              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

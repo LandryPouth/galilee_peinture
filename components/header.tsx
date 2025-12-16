@@ -45,39 +45,39 @@ export function Header() {
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
-                <Link href="#home">
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
+                  <Link href="#home">
                     {t("home")}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="#projects">
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
+                  <Link href="#projects">
                     {t("projects")}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="#expertise">
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
+                  <Link href="#expertise">
                     {t("expertise")}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="#invest">
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
+                  <Link href="#invest">
                     {t("invest")}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="#contact">
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent", isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-200")} asChild>
+                  <Link href="#contact">
                     {t("contact")}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
