@@ -17,14 +17,14 @@ import { cn } from "@/lib/utils"
 const SLIDES = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-img_1.jpg",
     keywords: "Excellence, Précision, Art",
     title: "GALILÉE PEINTURE, l'art de sublimer vos murs",
     subtitle: "Des peintures murales décoratives pour un intérieur unique",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-img_2.jpg",
     keywords: "Couleur, Texture, Émotion",
     title: "Votre Vision, Notre Création",
     subtitle: "Transformez vos espaces avec nos finitions haut de gamme",
