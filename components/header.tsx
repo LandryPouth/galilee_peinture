@@ -23,7 +23,6 @@ const playfair = Playfair_Display({ subsets: ["latin"] });
 const navItems = [
   { name: "home", href: "/" },
   { name: "projects", href: "/portfolio" },
-  { name: "expertise", href: "#expertise" },
   { name: "invest", href: "#invest" },
   { name: "contact", href: "#contact" },
 ];

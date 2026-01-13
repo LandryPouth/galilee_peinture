@@ -4,7 +4,6 @@ import { Intro } from "@/components/intro";
 import { Projects } from "@/components/projects";
 import { Expertise } from "@/components/expertise";
 import { Invest } from "@/components/invest";
-import { Footer } from "@/components/footer";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -17,7 +16,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Projects />
       <Expertise />
       <Invest />
-      <Footer />
     </main>
   );
 }
