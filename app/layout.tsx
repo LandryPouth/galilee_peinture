@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning className="scroll-smooth">
+    <html suppressHydrationWarning className="scroll-smooth" lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased [&_.container]:max-w-7xl [&_.container]:mx-auto [&_.container]:px-4 [&_.container]:md:px-8`}
       >
         {children}
         <ScrollToTop />

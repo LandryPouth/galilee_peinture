@@ -19,6 +19,7 @@
   "Projects": {
     "title": "NOS RÉALISATIONS",
     "discover": "DÉCOUVRIR",
+    "viewMore": "VOIR PLUS",
     "items": {
       "villa_bonapriso": {
         "title": "RÉNOVATION VILLA LES COCOTIERS",
@@ -83,19 +84,19 @@
   "Expertise": {
     "title": "NOTRE EXPERTISE",
     "items": {
-      "promotion": {
+      "interior": {
         "title": "PEINTURE INTÉRIEURE",
         "description": "Application soignée de peintures acryliques, alkydes et écologiques pour sublimer vos pièces de vie."
       },
-      "gestion": {
+      "decorative": {
         "title": "ENDUITS DÉCORATIFS",
         "description": "Maîtrise des techniques de stucco, chaux, béton ciré et effets de matière pour des murs uniques."
       },
-      "architecture": {
+      "exterior": {
         "title": "PEINTURE EXTÉRIEURE",
         "description": "Protection et embellissement de vos façades avec des produits résistants aux intempéries."
       },
-      "conseil": {
+      "consulting": {
         "title": "CONSEIL DÉCO",
         "description": "Accompagnement personnalisé dans le choix des couleurs et des harmonies pour créer l'ambiance idéale."
       }

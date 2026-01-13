@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { projectsData } from "@/data/projects";
@@ -15,7 +14,7 @@ export function Projects() {
   const t = useTranslations("Projects");
   const tPortfolio = useTranslations("Portfolio");
 
-  const projects = projectsData.map((project) => ({
+  const projects = projectsData.slice(0, 3).map((project) => ({
     id: project.id,
     title: t(project.titleKey as any),
     location: t(project.locationKey as any),
@@ -26,55 +25,103 @@ export function Projects() {
   }));
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-gray-50 text-black">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="projects" className="pt-12 pb-24 md:pt-20 md:pb-32 bg-white text-black">
+      <div className="container">
+        {/* Minimal title */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 md:mb-24"
         >
           <h2 className={cn(
-            "text-3xl md:text-4xl font-light tracking-wide uppercase mb-4",
+            "text-4xl md:text-6xl font-light tracking-tight",
             playfair.className
           )}>
             {t("title")}
           </h2>
-          <div className="w-20 h-px bg-black mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Minimal grid - large images with reveal effect */}
+        <div className="space-y-1">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              href={`/portfolio/${project.id}`}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="group block border-t border-stone-200 py-6 md:py-8"
             >
-              <div className="group cursor-pointer overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-amber-50 hover:to-gray-50">
-                <div className="relative h-56 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                {/* Number */}
+                <span className="text-stone-300 text-sm font-mono">
+                  0{index + 1}
+                </span>
+
+                {/* Title */}
+                <h3 className={cn(
+                  "flex-1 text-xl md:text-2xl font-light group-hover:text-amber-700 transition-colors duration-300",
+                  playfair.className
+                )}>
+                  {project.title}
+                </h3>
+
+                {/* Location - hidden on mobile */}
+                <span className="hidden md:block text-sm text-stone-400 w-40">
+                  {project.location}
+                </span>
+
+                {/* Arrow */}
+                <div className="flex items-center gap-2 text-stone-400 group-hover:text-black transition-colors">
+                  <span className="text-xs uppercase tracking-widest opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    Voir
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                </div>
+              </div>
+
+              {/* Image reveal on hover */}
+              <div className="h-0 group-hover:h-64 md:group-hover:h-80 overflow-hidden transition-all duration-500 ease-out">
+                <div className="relative h-64 md:h-80 mt-6">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-1 uppercase tracking-wide">{project.title}</h3>
-                  <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">{project.location}</p>
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">{project.description}</p>
-                  <Button variant="outline" className="w-full group/btn hover:bg-black hover:text-white transition-colors border-gray-300">
-                    {t("discover")}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
-                </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
+
+          {/* Bottom border */}
+          <div className="border-t border-stone-200" />
         </div>
+
+        {/* Minimal View More */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-24"
+        >
+          <a
+            href="/portfolio"
+            className="group inline-flex items-center gap-3"
+          >
+            <span className={cn(
+              "text-lg md:text-xl font-light group-hover:text-amber-700 transition-colors",
+              playfair.className
+            )}>
+              {t("viewMore")}
+            </span>
+            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
