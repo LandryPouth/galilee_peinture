@@ -25,8 +25,8 @@ export function Projects() {
   }));
 
   return (
-    <section id="projects" className="py-24 md:py-40 bg-white text-black">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="projects" className="pt-12 pb-24 md:pt-20 md:pb-32 bg-white text-black">
+      <div className="container">
         {/* Minimal title */}
         <motion.div
           initial={{ opacity: 0 }}

@@ -14,7 +14,7 @@ export function Invest() {
 
 
   return (
-    <section id="invest" className="relative py-32 md:py-48 bg-black text-white overflow-hidden">
+    <section id="invest" className="relative py-24 md:py-32 bg-black text-white overflow-hidden">
       {/* Background Image Overlay with stronger contrast */}
       <div className="absolute inset-0">
         <Image
@@ -26,7 +26,7 @@ export function Invest() {
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-black/40" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-8">
+      <div className="container relative z-10 mx-auto">
         <div className="max-w-4xl mx-auto text-center space-y-12">
 
           <motion.div

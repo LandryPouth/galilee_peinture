@@ -12,8 +12,8 @@ export function Intro() {
   const t = useTranslations("Intro");
 
   return (
-    <section className="py-24 md:py-40 bg-white text-black overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="pt-24 pb-12 md:pt-40 md:pb-20 bg-white text-black overflow-hidden">
+      <div className="container">
         <div className="flex flex-col md:flex-row items-start gap-16 md:gap-32">
 
           {/* Text Content - Sticky vibe on large screens */}

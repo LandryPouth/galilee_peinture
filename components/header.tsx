@@ -151,7 +151,7 @@ export function Header() {
             : "bg-transparent py-8"
         )}
       >
-        <div className="container mx-auto flex items-center justify-between px-4 md:px-8">
+        <div className="container flex items-center justify-between">
           {/* Logo / Brand */}
           <Link href="/" className="relative z-50 group">
             <span className={cn(
@@ -174,15 +174,17 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-12">
             {navItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              const linkStyles = isActive
+                ? (isScrolled ? "text-amber-700" : "text-white underline underline-offset-4")
+                : (isScrolled ? "text-black hover:text-amber-700" : "text-white hover:text-white/80 hover:underline hover:underline-offset-4");
+
               return (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
                     "group relative py-2 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300",
-                    isActive
-                      ? (isScrolled ? "text-amber-700" : "text-white underline underline-offset-4")
-                      : (isScrolled ? "text-black hover:text-amber-700" : "text-white hover:text-white/80 hover:underline hover:underline-offset-4")
+                    linkStyles
                   )}
                 >
                   {t(item.name)}

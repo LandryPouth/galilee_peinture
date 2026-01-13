@@ -13,29 +13,29 @@ export function Expertise() {
   const expertises = [
     {
       id: "01",
-      title: t("items.promotion.title"),
-      description: t("items.promotion.description"),
+      title: t("items.interior.title"),
+      description: t("items.interior.description"),
     },
     {
       id: "02",
-      title: t("items.gestion.title"),
-      description: t("items.gestion.description"),
+      title: t("items.decorative.title"),
+      description: t("items.decorative.description"),
     },
     {
       id: "03",
-      title: t("items.architecture.title"),
-      description: t("items.architecture.description"),
+      title: t("items.exterior.title"),
+      description: t("items.exterior.description"),
     },
     {
       id: "04",
-      title: t("items.conseil.title"),
-      description: t("items.conseil.description"),
+      title: t("items.consulting.title"),
+      description: t("items.consulting.description"),
     },
   ];
 
   return (
-    <section id="expertise" className="py-24 md:py-40 bg-stone-50 text-black">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="expertise" className="py-20 md:py-32 bg-stone-50 text-black">
+      <div className="container">
         <div className="flex flex-col md:flex-row gap-16 md:gap-32">
           {/* Main Title -Sticky-like */}
           <div className="md:w-1/3">

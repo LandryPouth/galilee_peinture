@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer id="contact" className="bg-black text-white py-24 md:py-32 border-t border-stone-800">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container">
         <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-24 mb-24">
 
           {/* Brand & Signature */}
