@@ -39,4 +39,54 @@ export const projectsData = [
     statusKey: "status.in_project",
     typeKey: "type.residence",
   },
+  {
+    id: 4,
+    titleKey: "items.immeuble_akwa.title",
+    locationKey: "items.immeuble_akwa.location",
+    image:
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+    descriptionKey: "items.immeuble_akwa.description",
+    statusKey: "status.completed",
+    typeKey: "type.building",
+  },
+  {
+    id: 5,
+    titleKey: "items.villa_odza.title",
+    locationKey: "items.villa_odza.location",
+    image:
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+    descriptionKey: "items.villa_odza.description",
+    statusKey: "status.in_construction",
+    typeKey: "type.villa",
+  },
+  {
+    id: 6,
+    titleKey: "items.residence_essos.title",
+    locationKey: "items.residence_essos.location",
+    image:
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+    descriptionKey: "items.residence_essos.description",
+    statusKey: "status.in_project",
+    typeKey: "type.residence",
+  },
+  {
+    id: 7,
+    titleKey: "items.immeuble_bonanjo.title",
+    locationKey: "items.immeuble_bonanjo.location",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    descriptionKey: "items.immeuble_bonanjo.description",
+    statusKey: "status.in_construction",
+    typeKey: "type.building",
+  },
+  {
+    id: 8,
+    titleKey: "items.villa_biyem_assi.title",
+    locationKey: "items.villa_biyem_assi.location",
+    image:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop",
+    descriptionKey: "items.villa_biyem_assi.description",
+    statusKey: "status.completed",
+    typeKey: "type.villa",
+  },
 ];

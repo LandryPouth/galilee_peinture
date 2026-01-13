@@ -34,6 +34,31 @@
         "title": "REVÊTEMENT DÉCORATIF LOFT",
         "location": "Kribi, Centre",
         "description": "Application d'un enduit décoratif effet béton ciré pour un loft industriel."
+      },
+      "immeuble_akwa": {
+        "title": "IMMEUBLE DE BUREAUX AKWA",
+        "location": "Douala, Akwa",
+        "description": "Peinture complète d'un immeuble de bureaux moderne avec finitions haut de gamme."
+      },
+      "villa_odza": {
+        "title": "VILLA CONTEMPORAINE ODZA",
+        "location": "Yaoundé, Odza",
+        "description": "Décoration murale avec effets de texture et couleurs personnalisées pour une villa moderne."
+      },
+      "residence_essos": {
+        "title": "RÉSIDENCE STANDING ESSOS",
+        "location": "Yaoundé, Essos",
+        "description": "Projet de peinture intérieure et extérieure pour une résidence de standing."
+      },
+      "immeuble_bonanjo": {
+        "title": "TOUR COMMERCIALE BONANJO",
+        "location": "Douala, Bonanjo",
+        "description": "Ravalement de façade et peinture intérieure d'une tour commerciale."
+      },
+      "villa_biyem_assi": {
+        "title": "VILLA LUXE BIYEM-ASSI",
+        "location": "Yaoundé, Biyem-Assi",
+        "description": "Finitions premium avec peintures écologiques et enduits décoratifs."
       }
     }
   },
@@ -52,7 +77,6 @@
     "filter_title": "FILTRER",
     "filter_type": "Type",
     "filter_status": "Statut",
-    "filter_search": "RECHERCHER",
     "status_label": "Statut",
     "type_label": "Type"
   },

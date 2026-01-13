@@ -7,6 +7,7 @@ import { projectsData } from "@/data/projects";
 import { PortfolioHero } from "@/components/portfolio-hero";
 import { Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { useState, useMemo } from "react";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -14,7 +15,10 @@ export default function Portfolio() {
   const t = useTranslations("Projects");
   const tPortfolio = useTranslations("Portfolio");
 
-  const projects = projectsData.map((project) => ({
+  const [typeFilter, setTypeFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+
+  const allProjects = projectsData.map((project) => ({
     id: project.id,
     title: t(project.titleKey as any),
     location: t(project.locationKey as any),
@@ -22,7 +26,18 @@ export default function Portfolio() {
     description: t(project.descriptionKey as any),
     status: tPortfolio(project.statusKey as any),
     type: tPortfolio(project.typeKey as any),
+    statusKey: project.statusKey.split('.')[1], // Extract 'completed', 'in_construction', etc.
+    typeKey: project.typeKey.split('.')[1], // Extract 'villa', 'residence', etc.
   }));
+
+  // Filter projects based on selected filters
+  const filteredProjects = useMemo(() => {
+    return allProjects.filter((project) => {
+      const matchesType = !typeFilter || project.typeKey === typeFilter;
+      const matchesStatus = !statusFilter || project.statusKey === statusFilter;
+      return matchesType && matchesStatus;
+    });
+  }, [allProjects, typeFilter, statusFilter]);
 
   return (
     <>
@@ -33,64 +48,72 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Main Content - Projects List */}
             <div className="lg:col-span-3 space-y-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="group"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 bg-white overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                    {/* Project Image - Left */}
-                    <div className="relative h-64 md:h-96 overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
+              {filteredProjects.length === 0 ? (
+                <div className="text-center py-20">
+                  <p className="text-xl text-gray-500">
+                    Aucun projet ne correspond à vos critères de recherche.
+                  </p>
+                </div>
+              ) : (
+                filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 bg-white overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                      {/* Project Image - Left */}
+                      <div className="relative h-64 md:h-96 overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
 
-                    {/* Project Info - Right */}
-                    <div className="bg-gradient-to-br from-blue-50 to-gray-50 p-8 md:p-10 flex flex-col justify-center border-l border-gray-200">
-                      <h3 className={cn(
-                        "text-2xl md:text-3xl font-light mb-3 uppercase tracking-wide text-black",
-                        playfair.className
-                      )}>
-                        {project.title}
-                      </h3>
+                      {/* Project Info - Right */}
+                      <div className="bg-gradient-to-br from-blue-50 to-gray-50 p-8 md:p-10 flex flex-col justify-center border-l border-gray-200">
+                        <h3 className={cn(
+                          "text-2xl md:text-3xl font-light mb-3 uppercase tracking-wide text-black",
+                          playfair.className
+                        )}>
+                          {project.title}
+                        </h3>
 
-                      <p className="text-sm md:text-base text-gray-600 mb-6 uppercase tracking-wider">
-                        {project.location}
-                      </p>
+                        <p className="text-sm md:text-base text-gray-600 mb-6 uppercase tracking-wider">
+                          {project.location}
+                        </p>
 
-                      {/* Status and Type Info */}
-                      <div className="space-y-3 border-t border-gray-300 pt-6">
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs uppercase tracking-wider text-gray-500">
-                            {tPortfolio("status_label")}
-                          </span>
-                          <span className="text-sm text-black font-light">
-                            {project.status}
-                          </span>
-                        </div>
+                        {/* Status and Type Info */}
+                        <div className="space-y-3 border-t border-gray-300 pt-6">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs uppercase tracking-wider text-gray-500">
+                              {tPortfolio("status_label")}
+                            </span>
+                            <span className="text-sm text-black font-light">
+                              {project.status}
+                            </span>
+                          </div>
 
-                        <div className="h-px bg-gray-200" />
+                          <div className="h-px bg-gray-200" />
 
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs uppercase tracking-wider text-gray-500">
-                            {tPortfolio("type_label")}
-                          </span>
-                          <span className="text-sm text-black font-light">
-                            {project.type}
-                          </span>
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs uppercase tracking-wider text-gray-500">
+                              {tPortfolio("type_label")}
+                            </span>
+                            <span className="text-sm text-black font-light">
+                              {project.type}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))
+              )}
             </div>
 
             {/* Sidebar - Filter */}
@@ -115,7 +138,11 @@ export default function Portfolio() {
                       <label className="block text-xs uppercase tracking-wider text-gray-600 mb-2">
                         {tPortfolio("filter_type")}
                       </label>
-                      <select className="w-full bg-white border border-gray-300 text-black px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+                      <select
+                        value={typeFilter}
+                        onChange={(e) => setTypeFilter(e.target.value)}
+                        className="w-full bg-white border border-gray-300 text-black px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                      >
                         <option value="">Tout voir</option>
                         <option value="villa">{tPortfolio("type.villa")}</option>
                         <option value="residence">{tPortfolio("type.residence")}</option>
@@ -128,7 +155,11 @@ export default function Portfolio() {
                       <label className="block text-xs uppercase tracking-wider text-gray-600 mb-2">
                         {tPortfolio("filter_status")}
                       </label>
-                      <select className="w-full bg-white border border-gray-300 text-black px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+                      <select
+                        value={statusFilter}
+                        onChange={(e) => setStatusFilter(e.target.value)}
+                        className="w-full bg-white border border-gray-300 text-black px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                      >
                         <option value="">Tout voir</option>
                         <option value="completed">{tPortfolio("status.completed")}</option>
                         <option value="in_construction">{tPortfolio("status.in_construction")}</option>
@@ -136,10 +167,18 @@ export default function Portfolio() {
                       </select>
                     </div>
 
-                    {/* Search Button */}
-                    <button className="w-full bg-black text-white px-6 py-3 uppercase text-sm tracking-wider hover:bg-gray-800 transition-colors duration-300 font-light mt-6">
-                      {tPortfolio("filter_search")}
-                    </button>
+                    {/* Reset Button */}
+                    {(typeFilter || statusFilter) && (
+                      <button
+                        onClick={() => {
+                          setTypeFilter("");
+                          setStatusFilter("");
+                        }}
+                        className="w-full bg-gray-200 text-black px-6 py-3 uppercase text-sm tracking-wider hover:bg-gray-300 transition-colors duration-300 font-light"
+                      >
+                        Réinitialiser
+                      </button>
+                    )}
                   </div>
                 </motion.div>
               </div>

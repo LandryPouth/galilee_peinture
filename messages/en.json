@@ -3,74 +3,117 @@
     "home": "HOME",
     "projects": "PROJECTS",
     "expertise": "EXPERTISE",
-    "invest": "INVEST",
+    "invest": "WHY US?",
     "contact": "CONTACT"
   },
   "Hero": {
-    "title": "GALILEE PEINTURE DEVELOPER",
-    "subtitle": "HIGH-END PAINTING IN CAMEROON"
+    "title": "GALILÉE PEINTURE",
+    "subtitle": "THE ART OF ENHANCING YOUR WALLS WITH PASSION"
   },
   "Intro": {
-    "title": "THE ART OF LIVING",
-    "subtitle": "PAR EXCELLENCE",
-    "description1": "Galilée Peinture Developer redefines luxury real estate in Cameroon. We create unique living spaces that combine contemporary elegance, absolute comfort, and prime locations.",
-    "description2": "Each project is a work of art, designed to offer an unparalleled residential experience, where every detail has been thought out for your well-being."
+    "title": "ABOUT US",
+    "subtitle": "GALILÉE PEINTURE",
+    "description1": "At Galilée Peinture, we don't just paint walls, we create atmospheres. With our expertise in wall and decorative painting, we transform every space into a work of art, combining technical skill and aesthetics.",
+    "description2": "Whether for high-end residential projects or commercial spaces, our team of qualified painters uses top-quality materials to guarantee impeccable and durable finishes."
   },
   "Projects": {
-    "title": "OUR LATEST PROJECTS",
+    "title": "OUR PROJECTS",
     "discover": "DISCOVER",
     "items": {
       "villa_bonapriso": {
-        "title": "VILLA BONAPRISO",
-        "location": "Douala, Cameroon",
-        "description": "An exclusive residence in the heart of Bonapriso."
+        "title": "LES COCOTIERS VILLA RENOVATION",
+        "location": "Douala, Bonapriso",
+        "description": "Complete transformation of interior spaces with warm and soothing tones."
       },
       "residence_bastos": {
-        "title": "BASTOS RESIDENCE",
-        "location": "Yaoundé, Cameroon",
-        "description": "Urban luxury and breathtaking city views."
+        "title": "ENTRANCE HALL MURAL",
+        "location": "Yaoundé, Bastos",
+        "description": "Creation of a custom artistic mural for the entrance hall of a residential complex."
       },
       "jardins_kribi": {
-        "title": "GARDENS OF KRIBI",
-        "location": "Kribi, Cameroon",
-        "description": "Your haven of peace by the sea."
+        "title": "DECORATIVE LOFT COATING",
+        "location": "Kribi, Centre",
+        "description": "Application of decorative coating with polished concrete effect for an industrial loft."
+      },
+      "immeuble_akwa": {
+        "title": "AKWA OFFICE BUILDING",
+        "location": "Douala, Akwa",
+        "description": "Complete painting of a modern office building with high-end finishes."
+      },
+      "villa_odza": {
+        "title": "CONTEMPORARY VILLA ODZA",
+        "location": "Yaoundé, Odza",
+        "description": "Wall decoration with texture effects and personalized colors for a modern villa."
+      },
+      "residence_essos": {
+        "title": "LUXURY RESIDENCE ESSOS",
+        "location": "Yaoundé, Essos",
+        "description": "Interior and exterior painting project for a luxury residence."
+      },
+      "immeuble_bonanjo": {
+        "title": "BONANJO COMMERCIAL TOWER",
+        "location": "Douala, Bonanjo",
+        "description": "Facade restoration and interior painting of a commercial tower."
+      },
+      "villa_biyem_assi": {
+        "title": "LUXURY VILLA BIYEM-ASSI",
+        "location": "Yaoundé, Biyem-Assi",
+        "description": "Premium finishes with eco-friendly paints and decorative coatings."
       }
     }
+  },
+  "Portfolio": {
+    "title": "PROJECTS",
+    "status": {
+      "completed": "Completed",
+      "in_construction": "Under Construction",
+      "in_project": "In Planning"
+    },
+    "type": {
+      "villa": "Villa",
+      "residence": "Residence",
+      "building": "Building"
+    },
+    "filter_title": "FILTER",
+    "filter_type": "Type",
+    "filter_status": "Status",
+    "status_label": "Status",
+    "type_label": "Type"
   },
   "Expertise": {
     "title": "OUR EXPERTISE",
     "items": {
       "promotion": {
-        "title": "PAINTING DEVELOPMENT",
-        "description": "Design and realization of exceptional residential projects."
+        "title": "INTERIOR PAINTING",
+        "description": "Careful application of acrylic, alkyd and eco-friendly paints to enhance your living spaces."
       },
       "gestion": {
-        "title": "PAINTING MANAGEMENT",
-        "description": "Rigorous and transparent management of your real estate assets."
+        "title": "DECORATIVE COATINGS",
+        "description": "Mastery of stucco, lime, polished concrete techniques and material effects for unique walls."
       },
       "architecture": {
-        "title": "PAINTING ARCHITECTURE & DESIGN",
-        "description": "Creation of unique spaces combining aesthetics and functionality."
+        "title": "EXTERIOR PAINTING",
+        "description": "Protection and beautification of your facades with weather-resistant products."
       },
       "conseil": {
-        "title": "PAINTING ADVICE",
-        "description": "Personalized support to optimize your assets."
+        "title": "DESIGN CONSULTING",
+        "description": "Personalized support in choosing colors and harmonies to create the ideal atmosphere."
       }
     }
   },
   "Invest": {
-    "title": "WHY INVEST IN CAMEROON?",
-    "description": "A growing economy, recognized political stability, and a dynamic real estate market make Cameroon a privileged destination for savvy investors.",
-    "button": "LEARN MORE"
+    "title": "WHY CHOOSE US?",
+    "description": "Because your walls deserve excellence. We combine traditional know-how and innovative techniques to bring your boldest projects to life. Quality, respect for deadlines and site cleanliness are our watchwords.",
+    "button": "REQUEST A QUOTE"
   },
   "Footer": {
-    "brand_description": "Real estate excellence in Cameroon. We turn your dreams into reality with passion and professionalism.",
-    "contact_title": "CONTACT",
-    "links_title": "USEFUL LINKS",
+    "brand_description": "Your trusted partner for all your painting and decoration work in Cameroon. Excellence at the service of your walls.",
+    "contact_title": "CONTACT US",
+    "links_title": "QUICK LINKS",
     "home": "Home",
-    "projects": "Our Projects",
-    "expertise": "Our Expertise",
-    "invest": "Invest",
-    "copyright": "© {year} Galilée Peinture Developer. All rights reserved."
+    "projects": "Projects",
+    "expertise": "Expertise",
+    "invest": "Why Us?",
+    "copyright": "© {year} Galilée Peinture. All rights reserved."
   }
 }
