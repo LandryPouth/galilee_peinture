@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
@@ -30,6 +30,7 @@ interface MobileMenuProps {
 
 function MobileMenu({ isOpen, onClose, langSwitcher }: MobileMenuProps) {
   const t = useTranslations("Header");
+  const pathname = usePathname();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -84,25 +85,33 @@ function MobileMenu({ isOpen, onClose, langSwitcher }: MobileMenuProps) {
             {/* Navigation Links */}
             <nav className="flex flex-1 flex-col justify-center px-8 pb-20">
               <div className="space-y-6">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 + index * 0.05 }}
-                  >
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "block text-3xl font-light text-black transition-colors hover:text-amber-700",
-                        playfair.className
-                      )}
-                      onClick={onClose}
+                {navItems.map((item, index) => {
+                  const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+                  return (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.1 + index * 0.05 }}
                     >
-                      {t(item.name)}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "block text-2xl font-light transition-colors relative w-fit group",
+                          playfair.className,
+                          isActive ? "text-amber-700" : "text-black hover:text-amber-700"
+                        )}
+                        onClick={onClose}
+                      >
+                        {t(item.name)}
+                        <span className={cn(
+                          "absolute -bottom-1 left-0 h-px bg-amber-700 transition-all duration-300",
+                          isActive ? "w-full" : "w-0 group-hover:w-full"
+                        )} />
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
             </nav>
 
@@ -120,6 +129,7 @@ function MobileMenu({ isOpen, onClose, langSwitcher }: MobileMenuProps) {
 
 export function Header() {
   const t = useTranslations("Header");
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -153,7 +163,7 @@ export function Header() {
             </span>
             {/* Subtitle hidden on scroll mostly, purely aesthetic */}
             <span className={cn(
-              "hidden md:block absolute -bottom-3 left-0 text-[10px] tracking-[0.3em] font-light uppercase transition-all duration-300",
+              "block absolute -bottom-3 left-0 text-[10px] tracking-[0.3em] font-light uppercase transition-all duration-300",
               isScrolled ? "opacity-0 -translate-y-2" : "opacity-80 text-white"
             )}>
               Peinture
@@ -162,24 +172,23 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-12">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="group relative py-2"
-              >
-                <span className={cn(
-                  "text-xs uppercase tracking-[0.15em] font-medium transition-colors duration-300",
-                  isScrolled ? "text-black group-hover:text-amber-700" : "text-white group-hover:text-white/80"
-                )}>
+            {navItems.map((item) => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "group relative py-2 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300",
+                    isActive
+                      ? (isScrolled ? "text-amber-700" : "text-white underline underline-offset-4")
+                      : (isScrolled ? "text-black hover:text-amber-700" : "text-white hover:text-white/80 hover:underline hover:underline-offset-4")
+                  )}
+                >
                   {t(item.name)}
-                </span>
-                <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] transform scale-x-0 transition-transform duration-300 origin-right group-hover:origin-left group-hover:scale-x-100",
-                  isScrolled ? "bg-amber-700" : "bg-white"
-                )} />
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
 
             <div className={cn(
               "w-px h-4 mx-2 transition-colors duration-300",

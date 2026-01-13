@@ -4,7 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { motion, AnimatePresence } from "motion/react"
-import { ArrowDown, ArrowRight } from "lucide-react"
 
 import {
   Carousel,
@@ -121,7 +120,7 @@ export function HeroCarousel() {
             <div></div>
 
             {/* Current Slide Number */}
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end relative top-8 md:top-2">
               <motion.div
                 key={current}
                 initial={{ opacity: 0, y: 10 }}
@@ -196,7 +195,7 @@ export function HeroCarousel() {
                     key={index}
                     onClick={() => api?.scrollTo(index)}
                     className={cn(
-                      "group relative h-1 transition-all duration-500 rounded-full pointer-events-auto overflow-hidden",
+                      "group cursor-pointer relative h-1 transition-all duration-500 rounded-full pointer-events-auto overflow-hidden",
                       index === current ? "w-16 bg-white/40" : "w-3 bg-white/20 hover:bg-white/40"
                     )}
                     aria-label={`Go to slide ${index + 1}`}
