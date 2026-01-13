@@ -116,5 +116,42 @@
     "expertise": "Expertise",
     "invest": "Pourquoi Nous ?",
     "copyright": "© {year} Galilée Peinture. Tous droits réservés."
+  },
+  "WhyUs": {
+    "hero_title": "NOTRE PHILOSOPHIE",
+    "hero_subtitle": "L'EXCELLENCE COMME STANDARD",
+    "manifesto_title": "L'ART DU DÉTAIL",
+    "manifesto_text1": "Chez Galilée Peinture, nous croyons que chaque mur est une toile vierge attendant d'être révélée. Notre approche n'est pas seulement technique, elle est artistique.",
+    "manifesto_text2": "Nous collaborons avec les architectes et les designers les plus exigeants pour donner vie à des visions uniques. Notre engagement envers la qualité est absolu, du choix des matériaux à la précision du dernier coup de pinceau.",
+    "values_title": "NOS VALEURS",
+    "values": {
+      "precision": {
+        "title": "PRÉCISION",
+        "description": "Une attention maniaque aux détails et aux finitions."
+      },
+      "innovation": {
+        "title": "INNOVATION",
+        "description": "Utilisation de techniques et matériaux d'avant-garde."
+      },
+      "commitment": {
+        "title": "ENGAGEMENT",
+        "description": "Le respect des délais et de votre espace est sacré."
+      }
+    },
+    "cta_title": "PRÊT À TRANSFORMER VOTRE ESPACE ?",
+    "cta_button": "COMMENCER LE PROJET"
+  },
+  "ContactPage": {
+    "hero_title": "DISCUTONS DE VOTRE PROJET",
+    "hero_subtitle": "CONTACT",
+    "info_title": "COORDONNÉES",
+    "form_title": "ENVOYER UN MESSAGE",
+    "form": {
+      "name": "NOM COMPLET",
+      "email": "ADRESSE EMAIL",
+      "phone": "TÉLÉPHONE (OPTIONNEL)",
+      "message": "VOTRE MESSAGE",
+      "submit": "ENVOYER LA DEMANDE"
+    }
   }
 }

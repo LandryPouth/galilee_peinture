@@ -18,8 +18,8 @@ const inter = Inter({ subsets: ["latin"] });
 const navItems = [
   { name: "home", href: "/" },
   { name: "projects", href: "/portfolio" },
-  { name: "invest", href: "#invest" },
-  { name: "contact", href: "#contact" },
+  { name: "invest", href: "/why-us" },
+  { name: "contact", href: "/contact" },
 ];
 
 interface MobileMenuProps {
