@@ -56,7 +56,7 @@ export function Footer() {
               {["home", "projects", "expertise", "invest"].map((key) => (
                 <Link
                   key={key}
-                  href={`#${key === "home" ? "" : key}`} // Fix home anchor if needed, usually top
+                  href={key === "home" ? "/" : key === "projects" ? "/portfolio" : key === "invest" ? "/why-us" : `/${key}`} // Dynamic routes
                   className={cn(
                     "text-2xl font-light hover:text-amber-700 transition-colors w-fit",
                     playfair.className

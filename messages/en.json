@@ -116,5 +116,42 @@
     "expertise": "Expertise",
     "invest": "Why Us?",
     "copyright": "© {year} Galilée Peinture. All rights reserved."
+  },
+  "WhyUs": {
+    "hero_title": "OUR PHILOSOPHY",
+    "hero_subtitle": "EXCELLENCE AS STANDARD",
+    "manifesto_title": "THE ART OF DETAIL",
+    "manifesto_text1": "At Galilée Peinture, we believe that every wall is a blank canvas waiting to be revealed. Our approach is not just technical, it's artistic.",
+    "manifesto_text2": "We collaborate with the most demanding architects and designers to bring unique visions to life. Our commitment to quality is absolute, from the choice of materials to the precision of the last brushstroke.",
+    "values_title": "OUR VALUES",
+    "values": {
+      "precision": {
+        "title": "PRECISION",
+        "description": "Maniacal attention to detail and finishes."
+      },
+      "innovation": {
+        "title": "INNOVATION",
+        "description": "Use of avant-garde techniques and materials."
+      },
+      "commitment": {
+        "title": "COMMITMENT",
+        "description": "Respect for deadlines and your space is sacred."
+      }
+    },
+    "cta_title": "READY TO TRANSFORM YOUR SPACE?",
+    "cta_button": "START THE PROJECT"
+  },
+  "ContactPage": {
+    "hero_title": "LET'S DISCUSS YOUR PROJECT",
+    "hero_subtitle": "CONTACT",
+    "info_title": "CONTACT DETAILS",
+    "form_title": "SEND A MESSAGE",
+    "form": {
+      "name": "FULL NAME",
+      "email": "EMAIL ADDRESS",
+      "phone": "PHONE (OPTIONAL)",
+      "message": "YOUR MESSAGE",
+      "submit": "SEND REQUEST"
+    }
   }
 }
