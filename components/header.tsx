@@ -21,8 +21,8 @@ import { Playfair_Display } from "next/font/google";
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
 const navItems = [
-  { name: "home", href: "#home" },
-  { name: "projects", href: "#projects" },
+  { name: "home", href: "/" },
+  { name: "projects", href: "/portfolio" },
   { name: "expertise", href: "#expertise" },
   { name: "invest", href: "#invest" },
   { name: "contact", href: "#contact" },

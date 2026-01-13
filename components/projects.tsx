@@ -5,33 +5,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { projectsData } from "@/data/projects";
 
 export function Projects() {
   const t = useTranslations("Projects");
+  const tPortfolio = useTranslations("Portfolio");
 
-  const projects = [
-    {
-      id: 1,
-      title: t("items.villa_bonapriso.title"),
-      location: t("items.villa_bonapriso.location"),
-      image: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=2070&auto=format&fit=crop",
-      description: t("items.villa_bonapriso.description"),
-    },
-    {
-      id: 2,
-      title: t("items.residence_bastos.title"),
-      location: t("items.residence_bastos.location"),
-      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop",
-      description: t("items.residence_bastos.description"),
-    },
-    {
-      id: 3,
-      title: t("items.jardins_kribi.title"),
-      location: t("items.jardins_kribi.location"),
-      image: "https://images.unsplash.com/photo-1507149833265-60c372daea22?q=80&w=2076&auto=format&fit=crop",
-      description: t("items.jardins_kribi.description"),
-    },
-  ];
+  const projects = projectsData.map((project) => ({
+    id: project.id,
+    title: t(project.titleKey as any),
+    location: t(project.locationKey as any),
+    image: project.image,
+    description: t(project.descriptionKey as any),
+    status: tPortfolio(project.statusKey as any),
+    type: tPortfolio(project.typeKey as any),
+  }));
 
   return (
     <section id="projects" className="py-20 md:py-32 bg-gray-50 text-black">
