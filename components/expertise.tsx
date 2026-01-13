@@ -3,6 +3,10 @@
 import { motion } from "motion/react";
 import { Brush, PaintBucket, Palette, Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Playfair_Display } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const playfair = Playfair_Display({ subsets: ["latin"] });
 
 export function Expertise() {
   const t = useTranslations("Expertise");
@@ -40,7 +44,10 @@ export function Expertise() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light tracking-wide uppercase mb-4">
+          <h2 className={cn(
+            "text-3xl md:text-4xl font-light tracking-wide uppercase mb-4",
+            playfair.className
+          )}>
             {t("title")}
           </h2>
           <div className="w-20 h-px bg-black mx-auto" />

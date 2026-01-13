@@ -3,6 +3,10 @@
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const playfair = Playfair_Display({ subsets: ["latin"] });
 
 export function Intro() {
   const t = useTranslations("Intro");
@@ -18,7 +22,10 @@ export function Intro() {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide uppercase">
+            <h2 className={cn(
+              "text-3xl md:text-4xl font-light mb-8 tracking-wide uppercase",
+              playfair.className
+            )}>
               {t("title")} <br />
               <span className="font-bold">{t("subtitle")}</span>
             </h2>
