@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Brush, PaintBucket, Palette, Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -13,63 +12,76 @@ export function Expertise() {
 
   const expertises = [
     {
-      icon: Brush,
+      id: "01",
       title: t("items.promotion.title"),
       description: t("items.promotion.description"),
     },
     {
-      icon: Layers,
+      id: "02",
       title: t("items.gestion.title"),
       description: t("items.gestion.description"),
     },
     {
-      icon: PaintBucket,
+      id: "03",
       title: t("items.architecture.title"),
       description: t("items.architecture.description"),
     },
     {
-      icon: Palette,
+      id: "04",
       title: t("items.conseil.title"),
       description: t("items.conseil.description"),
     },
   ];
 
   return (
-    <section id="expertise" className="py-20 md:py-32 bg-white text-black">
+    <section id="expertise" className="py-24 md:py-40 bg-stone-50 text-black">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className={cn(
-            "text-3xl md:text-4xl font-light tracking-wide uppercase mb-4",
-            playfair.className
-          )}>
-            {t("title")}
-          </h2>
-          <div className="w-20 h-px bg-black mx-auto" />
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {expertises.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+        <div className="flex flex-col md:flex-row gap-16 md:gap-32">
+          {/* Main Title -Sticky-like */}
+          <div className="md:w-1/3">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center group"
+              className={cn(
+                "text-4xl md:text-5xl font-light tracking-wide leading-tight sticky top-32",
+                playfair.className
+              )}
             >
-              <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-black group-hover:bg-black group-hover:text-white transition-colors duration-300">
-                <item.icon className="h-8 w-8" />
-              </div>
-              <h3 className="text-lg font-bold mb-4 uppercase tracking-wide">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.description}</p>
-            </motion.div>
-          ))}
+              {t("title")}
+              <span className="block mt-4 text-xs font-sans tracking-[0.2em] text-stone-400 uppercase">
+                Services Exclusifs
+              </span>
+            </motion.h2>
+          </div>
+
+          {/* List of Expertises */}
+          <div className="md:w-2/3 grid grid-cols-1 gap-12 md:gap-20">
+            {expertises.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group border-t border-stone-200 pt-8 md:pt-12"
+              >
+                <span className="text-xs font-mono text-stone-400 mb-4 block">
+                  {item.id}
+                </span>
+                <h3 className={cn(
+                  "text-2xl md:text-3xl font-light mb-4 group-hover:text-amber-700 transition-colors duration-300",
+                  playfair.className
+                )}>
+                  {item.title}
+                </h3>
+                <p className="text-stone-600 leading-relaxed font-light text-lg md:w-3/4">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

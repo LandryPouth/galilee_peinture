@@ -145,7 +145,7 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out",
+          "fixed top-0 z-50 w-full transition-[background-color,padding,backdrop-filter] duration-500 ease-in-out",
           isScrolled
             ? "bg-white/90 backdrop-blur-md py-4 border-b border-gray-100"
             : "bg-transparent py-8"
