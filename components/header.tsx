@@ -9,11 +9,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "./language-switcher";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
-// Adding Inter for clean UI elements if needed, though we primarily stick to Playfair for this aesthetic
-const inter = Inter({ subsets: ["latin"] });
 
 const navItems = [
   { name: "home", href: "/" },
@@ -72,7 +70,7 @@ function MobileMenu({ isOpen, onClose, langSwitcher }: MobileMenuProps) {
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-8 py-8">
               <span className={cn("text-2xl font-medium", playfair.className)}>
-                Menu
+                {t("menu")}
               </span>
               <button
                 onClick={onClose}
@@ -159,14 +157,14 @@ export function Header() {
               playfair.className,
               isScrolled ? "text-black" : "text-white"
             )}>
-              GALILÉE
+              {t("logo_part1")}
             </span>
             {/* Subtitle hidden on scroll mostly, purely aesthetic */}
             <span className={cn(
               "block absolute -bottom-3 left-0 text-[10px] tracking-[0.3em] font-light uppercase transition-all duration-300",
               isScrolled ? "opacity-0 -translate-y-2" : "opacity-80 text-white"
             )}>
-              Peinture
+              {t("logo_part2")}
             </span>
           </Link>
 
@@ -208,7 +206,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(true)}
-              aria-label="Ouvrir le menu"
+              aria-label={t("open_menu")}
               className={cn(
                 "hover:bg-transparent transition-colors",
                 isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-white/80"

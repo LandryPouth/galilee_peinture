@@ -4,7 +4,11 @@
     "projects": "PROJECTS",
     "expertise": "EXPERTISE",
     "invest": "WHY US?",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "menu": "Menu",
+    "open_menu": "Open menu",
+    "logo_part1": "GALILÉE",
+    "logo_part2": "Peinture"
   },
   "Hero": {
     "title": "GALILÉE PEINTURE",
@@ -20,6 +24,7 @@
     "title": "OUR PROJECTS",
     "discover": "DISCOVER",
     "viewMore": "VIEW MORE",
+    "see": "See",
     "items": {
       "villa_bonapriso": {
         "title": "LES COCOTIERS VILLA RENOVATION",
@@ -79,7 +84,10 @@
     "filter_type": "Type",
     "filter_status": "Status",
     "status_label": "Status",
-    "type_label": "Type"
+    "type_label": "Type",
+    "all": "All",
+    "reset": "Reset",
+    "no_projects": "No projects found."
   },
   "Expertise": {
     "title": "OUR EXPERTISE",
@@ -115,7 +123,15 @@
     "projects": "Projects",
     "expertise": "Expertise",
     "invest": "Why Us?",
-    "copyright": "© {year} Galilée Peinture. All rights reserved."
+    "copyright": "© {year} Galilée Peinture. All rights reserved.",
+    "location": "Bonapriso, Douala,<br />Cameroon",
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook"
+    },
+    "brand_name_part1": "Galilée",
+    "brand_name_part2": "Peinture"
   },
   "WhyUs": {
     "hero_title": "OUR PHILOSOPHY",
@@ -139,7 +155,8 @@
       }
     },
     "cta_title": "READY TO TRANSFORM YOUR SPACE?",
-    "cta_button": "START THE PROJECT"
+    "cta_button": "START THE PROJECT",
+    "ambience_quote": "\"Color is the final touch that reveals the architecture.\""
   },
   "ContactPage": {
     "hero_title": "LET'S DISCUSS YOUR PROJECT",
@@ -152,6 +169,38 @@
       "phone": "PHONE (OPTIONAL)",
       "message": "YOUR MESSAGE",
       "submit": "SEND REQUEST"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "location": "Bonapriso,<br />Douala, Cameroon"
     }
+  },
+  "Accessibility": {
+    "close": "Close",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "HeroCarousel": {
+    "slides": [
+      {
+        "category": "Architecture",
+        "title": "The Art of Perfection",
+        "description": "A meticulous approach for exceptional finishes."
+      },
+      {
+        "category": "Design",
+        "title": "Timeless Spaces",
+        "description": "Creating atmospheres that stand the test of time with elegance."
+      },
+      {
+        "category": "Innovation",
+        "title": "Materials & Textures",
+        "description": "Innovation at the service of your wall surfaces."
+      }
+    ],
+    "discover": "Discover",
+    "goToSlide": "Go to slide {slideNumber}"
   }
 }

@@ -22,7 +22,7 @@ export function Footer() {
               "text-3xl font-light tracking-wide uppercase",
               playfair.className
             )}>
-              Galilée <span className="block font-bold mt-1">Peinture</span>
+              {t("brand_name_part1")} <span className="block font-bold mt-1">{t("brand_name_part2")}</span>
             </h3>
             <p className="text-stone-400 font-light leading-relaxed max-w-sm">
               {t("brand_description")}
@@ -41,9 +41,7 @@ export function Footer() {
               <a href="tel:+237699999999" className="block hover:text-amber-700 transition-colors">
                 +237 6 99 99 99 99
               </a>
-              <p className="text-stone-400">
-                Bonapriso, Douala,<br />Cameroun
-              </p>
+              <p className="text-stone-400" dangerouslySetInnerHTML={{ __html: t("location") }}/>
             </div>
           </div>
 
@@ -71,12 +69,12 @@ export function Footer() {
 
         {/* Bottom Bar - Minimal */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-stone-900 text-stone-600 text-xs uppercase tracking-widest">
-          <p>&copy; {currentYear} Galilée Peinture. All rights reserved.</p>
+          <p>{t("copyright", { year: currentYear })}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {/* Socials as Text or Minimal Icons */}
-            <a href="#" className="hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors">Facebook</a>
+            <a href="#" className="hover:text-white transition-colors">{t("social.instagram")}</a>
+            <a href="#" className="hover:text-white transition-colors">{t("social.linkedin")}</a>
+            <a href="#" className="hover:text-white transition-colors">{t("social.facebook")}</a>
           </div>
         </div>
       </div>

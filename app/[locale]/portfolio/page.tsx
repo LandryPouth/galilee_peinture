@@ -20,12 +20,12 @@ export default function Portfolio() {
 
   const allProjects = projectsData.map((project) => ({
     id: project.id,
-    title: t(project.titleKey as any),
-    location: t(project.locationKey as any),
+    title: t(project.titleKey),
+    location: t(project.locationKey),
     image: project.image,
-    description: t(project.descriptionKey as any),
-    status: tPortfolio(project.statusKey as any),
-    type: tPortfolio(project.typeKey as any),
+    description: t(project.descriptionKey),
+    status: tPortfolio(project.statusKey),
+    type: tPortfolio(project.typeKey),
     statusKey: project.statusKey.split('.')[1], // Extract 'completed', 'in_construction', etc.
     typeKey: project.typeKey.split('.')[1], // Extract 'villa', 'residence', etc.
   }));
@@ -78,7 +78,7 @@ export default function Portfolio() {
                               typeFilter === type ? "text-amber-700 font-medium" : "text-stone-400"
                             )}
                           >
-                            {type === "" ? "Tout" : tPortfolio(`type.${type}`)}
+                            {type === "" ? tPortfolio("all") : tPortfolio(`type.${type}`)}
                           </button>
                         ))}
                       </div>
@@ -99,7 +99,7 @@ export default function Portfolio() {
                               statusFilter === status ? "text-amber-700 font-medium" : "text-stone-400"
                             )}
                           >
-                            {status === "" ? "Tout" : tPortfolio(`status.${status}`)}
+                            {status === "" ? tPortfolio("all") : tPortfolio(`status.${status}`)}
                           </button>
                         ))}
                       </div>
@@ -114,7 +114,7 @@ export default function Portfolio() {
                         }}
                         className="text-[10px] uppercase tracking-[0.2em] text-stone-400 hover:text-black transition-colors border-b border-stone-200 pb-1"
                       >
-                        Réinitialiser
+                        {tPortfolio("reset")}
                       </button>
                     )}
                   </div>
@@ -127,7 +127,7 @@ export default function Portfolio() {
               {filteredProjects.length === 0 ? (
                 <div className="py-20 border-t border-stone-100">
                   <p className={cn("text-2xl font-light text-stone-400", playfair.className)}>
-                    Aucun projet trouvé.
+                    {tPortfolio("no_projects")}
                   </p>
                 </div>
               ) : (

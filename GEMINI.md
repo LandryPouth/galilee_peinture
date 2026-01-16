@@ -82,3 +82,4 @@ The project uses Tailwind CSS for styling. Utility classes are used directly in 
 
 - Always look for the [design system file](design_system.md) before creating a page or component to match the global system design
 - Always lint to check if there is an error, and if it is the case, try to fix it
+- Always run the development server to check if there is an error "pnpm run dev". And if it is the case, try to fix it. If the error is fixed, stop the server
