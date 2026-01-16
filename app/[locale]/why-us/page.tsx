@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -71,7 +72,7 @@ export default function WhyUs() {
               "text-3xl md:text-4xl italic font-light text-stone-800",
               playfair.className
             )}>
-              "{t("manifesto_title")}"
+              {t("manifesto_title")}
             </h2>
             <div className="space-y-8 text-lg md:text-2xl font-light leading-relaxed text-stone-600">
               <p>{t("manifesto_text1")}</p>
@@ -119,7 +120,7 @@ export default function WhyUs() {
                 viewport={{ once: true }}
                 className="text-sm md:text-base font-light italic text-stone-400 max-w-xs ml-auto"
               >
-                "La couleur est la touche finale qui révèle l'architecture."
+                {t("ambience_quote")}
               </motion.p>
             </div>
           </div>
@@ -178,7 +179,7 @@ export default function WhyUs() {
             variant="outline"
             className="bg-transparent border-white text-white hover:bg-white hover:text-black px-12 py-8 text-sm md:text-base tracking-[0.2em] uppercase rounded-none transition-all duration-500 cursor-pointer"
           >
-            <a href="/contact">{t("cta_button")}</a>
+            <Link href="/contact">{t("cta_button")}</Link>
           </Button>
         </div>
       </section>

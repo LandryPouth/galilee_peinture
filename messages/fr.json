@@ -4,7 +4,11 @@
     "projects": "RÉALISATIONS",
     "expertise": "EXPERTISE",
     "invest": "POURQUOI NOUS ?",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "menu": "Menu",
+    "open_menu": "Ouvrir le menu",
+    "logo_part1": "GALILÉE",
+    "logo_part2": "Peinture"
   },
   "Hero": {
     "title": "GALILÉE PEINTURE",
@@ -79,7 +83,10 @@
     "filter_type": "Type",
     "filter_status": "Statut",
     "status_label": "Statut",
-    "type_label": "Type"
+    "type_label": "Type",
+    "all": "Tout",
+    "reset": "Réinitialiser",
+    "no_projects": "Aucun projet trouvé."
   },
   "Expertise": {
     "title": "NOTRE EXPERTISE",
@@ -115,7 +122,15 @@
     "projects": "Réalisations",
     "expertise": "Expertise",
     "invest": "Pourquoi Nous ?",
-    "copyright": "© {year} Galilée Peinture. Tous droits réservés."
+    "copyright": "© {year} Galilée Peinture. Tous droits réservés.",
+    "location": "Bonapriso, Douala,<br />Cameroun",
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook"
+    },
+    "brand_name_part1": "Galilée",
+    "brand_name_part2": "Peinture"
   },
   "WhyUs": {
     "hero_title": "NOTRE PHILOSOPHIE",
@@ -139,7 +154,8 @@
       }
     },
     "cta_title": "PRÊT À TRANSFORMER VOTRE ESPACE ?",
-    "cta_button": "COMMENCER LE PROJET"
+    "cta_button": "COMMENCER LE PROJET",
+    "ambience_quote": "\"La couleur est la touche finale qui révèle l'architecture.\""
   },
   "ContactPage": {
     "hero_title": "DISCUTONS DE VOTRE PROJET",
@@ -152,6 +168,38 @@
       "phone": "TÉLÉPHONE (OPTIONNEL)",
       "message": "VOTRE MESSAGE",
       "submit": "ENVOYER LA DEMANDE"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "location": "Bonapriso,<br />Douala, Cameroun"
     }
+  },
+  "Accessibility": {
+    "close": "Fermer",
+    "previousSlide": "Diapositive précédente",
+    "nextSlide": "Diapositive suivante"
+  },
+  "HeroCarousel": {
+    "slides": [
+      {
+        "category": "Architecture",
+        "title": "L'Art de la Perfection",
+        "description": "Une approche minutieuse pour des finitions d'exception."
+      },
+      {
+        "category": "Design",
+        "title": "Espaces Intemporels",
+        "description": "Créer des atmosphères qui traversent le temps avec élégance."
+      },
+      {
+        "category": "Innovation",
+        "title": "Matières & Textures",
+        "description": "L'innovation au service de vos surfaces murales."
+      }
+    ],
+    "discover": "Découvrir",
+    "goToSlide": "Aller à la diapositive {slideNumber}"
   }
 }

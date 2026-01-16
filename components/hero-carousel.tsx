@@ -5,6 +5,7 @@ import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { motion, AnimatePresence } from "motion/react"
 
+import { useTranslations } from "next-intl"
 import {
   Carousel,
   CarouselContent,
@@ -16,34 +17,32 @@ import { cn } from "@/lib/utils"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
-const SLIDES = [
+const originalSlides = [
   {
     id: 1,
     image: "/images/hero-img_1.jpg",
-    category: "Architecture",
-    title: "L'Art de la Perfection",
-    description: "Une approche minutieuse pour des finitions d'exception.",
   },
   {
     id: 2,
     image: "/images/hero-img_2.jpg",
-    category: "Design",
-    title: "Espaces Intemporels",
-    description: "Créer des atmosphères qui traversent le temps avec élégance.",
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2070&auto=format&fit=crop",
-    category: "Innovation",
-    title: "Matières & Textures",
-    description: "L'innovation au service de vos surfaces murales.",
   },
 ]
 
 export function HeroCarousel() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
+  const t = useTranslations("HeroCarousel")
+
+  const slides = originalSlides.map((slide, index) => ({
+    ...slide,
+    category: t(`slides.${index}.category`),
+    title: t(`slides.${index}.title`),
+    description: t(`slides.${index}.description`),
+  }));
 
   // Autoplay delay synchronized with CSS animation
   const plugin = React.useRef(
@@ -55,7 +54,6 @@ export function HeroCarousel() {
       return
     }
 
-    setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap())
 
     api.on("select", () => {
@@ -82,7 +80,7 @@ export function HeroCarousel() {
         }}
       >
         <CarouselContent className="h-full ml-0">
-          {SLIDES.map((slide, index) => (
+          {slides.map((slide, index) => (
             <CarouselItem key={slide.id} className="pl-0 h-full relative">
               {/* Ken Burns effect on image */}
               <div className="absolute inset-0 overflow-hidden">
@@ -155,7 +153,7 @@ export function HeroCarousel() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-amber-200 text-xs md:text-sm uppercase tracking-[0.3em]"
                   >
-                    {SLIDES[current].category}
+                    {slides[current].category}
                   </motion.p>
                 </div>
 
@@ -166,7 +164,7 @@ export function HeroCarousel() {
                       playfair.className
                     )}
                   >
-                    {SLIDES[current].title}
+                    {slides[current].title}
                   </motion.h1>
                 </div>
 
@@ -177,7 +175,7 @@ export function HeroCarousel() {
                     transition={{ duration: 1, delay: 0.5 }}
                     className="text-white/80 text-lg md:text-xl font-light max-w-xl leading-relaxed"
                   >
-                    {SLIDES[current].description}
+                    {slides[current].description}
                   </motion.p>
                 </div>
               </motion.div>
@@ -190,7 +188,7 @@ export function HeroCarousel() {
             {/* Indicators - Restored to left */}
             <div className="flex items-center gap-4">
               <div className="flex gap-2">
-                {SLIDES.map((_, index) => (
+                {slides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => api?.scrollTo(index)}
@@ -198,7 +196,7 @@ export function HeroCarousel() {
                       "group cursor-pointer relative h-1 transition-all duration-500 rounded-full pointer-events-auto overflow-hidden",
                       index === current ? "w-16 bg-white/40" : "w-3 bg-white/20 hover:bg-white/40"
                     )}
-                    aria-label={`Go to slide ${index + 1}`}
+                    aria-label={t("goToSlide", { slideNumber: index + 1 })}
                   >
                     {index === current && (
                       <span
@@ -220,7 +218,7 @@ export function HeroCarousel() {
               className="group flex flex-col items-center gap-2 pointer-events-auto"
             >
               <span className="text-white/60 text-[10px] uppercase tracking-[0.2em] group-hover:text-white transition-colors">
-                Découvrir
+                {t("discover")}
               </span>
               <div className="w-px h-12 bg-white/20 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-white animate-slide-down opacity-50" />

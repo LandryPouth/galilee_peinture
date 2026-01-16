@@ -64,22 +64,20 @@ export default function Contact() {
               </h3>
               <div className="space-y-8 font-light text-lg">
                 <div className="group">
-                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">Email</span>
+                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">{t("info.email")}</span>
                   <a href="mailto:contact@galileepeinture.com" className="hover:text-amber-700 transition-colors cursor-pointer">
                     contact@galileepeinture.com
                   </a>
                 </div>
                 <div className="group">
-                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">Téléphone</span>
+                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">{t("info.phone")}</span>
                   <a href="tel:+237699999999" className="hover:text-amber-700 transition-colors cursor-pointer">
                     +237 6 99 99 99 99
                   </a>
                 </div>
                 <div>
-                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">Adresse</span>
-                  <p className="text-stone-600">
-                    Bonapriso,<br />Douala, Cameroun
-                  </p>
+                  <span className="block text-[10px] uppercase tracking-widest text-stone-400 mb-2">{t("info.address")}</span>
+                  <p className="text-stone-600" dangerouslySetInnerHTML={{ __html: t("info.location") }} />
                 </div>
               </div>
             </div>
