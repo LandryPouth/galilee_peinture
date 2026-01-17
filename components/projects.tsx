@@ -7,6 +7,7 @@ import Image from "next/image";
 import { projectsData } from "@/data/projects";
 import { Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -46,55 +47,58 @@ export function Projects() {
         {/* Minimal grid - large images with reveal effect */}
         <div className="space-y-1">
           {projects.map((project, index) => (
-            <motion.a
+            <motion.div
               key={project.id}
-              href={`/portfolio/${project.id}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group block border-t border-stone-200 py-6 md:py-8"
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                {/* Number */}
-                <span className="text-stone-300 text-sm font-mono">
-                  0{index + 1}
-                </span>
-
-                {/* Title */}
-                <h3 className={cn(
-                  "flex-1 text-xl md:text-2xl font-light group-hover:text-amber-700 transition-colors duration-300",
-                  playfair.className
-                )}>
-                  {project.title}
-                </h3>
-
-                {/* Location - hidden on mobile */}
-                <span className="hidden md:block text-sm text-stone-400 w-40">
-                  {project.location}
-                </span>
-
-                {/* Arrow */}
-                <div className="flex items-center gap-2 text-stone-400 group-hover:text-black transition-colors">
-                  <span className="text-xs uppercase tracking-widest opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    Voir
+              <Link
+                href={`/portfolio/${project.id}`}
+                className="group block border-t border-stone-200 py-6 md:py-8"
+              >
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                  {/* Number */}
+                  <span className="text-stone-300 text-sm font-mono">
+                    0{index + 1}
                   </span>
-                  <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                </div>
-              </div>
 
-              {/* Image reveal on hover */}
-              <div className="h-0 group-hover:h-64 md:group-hover:h-80 overflow-hidden transition-all duration-500 ease-out">
-                <div className="relative h-64 md:h-80 mt-6">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
+                  {/* Title */}
+                  <h3 className={cn(
+                    "flex-1 text-xl md:text-2xl font-light group-hover:text-amber-700 transition-colors duration-300",
+                    playfair.className
+                  )}>
+                    {project.title}
+                  </h3>
+
+                  {/* Location - hidden on mobile */}
+                  <span className="hidden md:block text-sm text-stone-400 w-40">
+                    {project.location}
+                  </span>
+
+                  {/* Arrow */}
+                  <div className="flex items-center gap-2 text-stone-400 group-hover:text-black transition-colors">
+                    <span className="text-xs uppercase tracking-widest opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                      Voir
+                    </span>
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                  </div>
                 </div>
-              </div>
-            </motion.a>
+
+                {/* Image reveal on hover */}
+                <div className="h-0 group-hover:h-64 md:group-hover:h-80 overflow-hidden transition-all duration-500 ease-out">
+                  <div className="relative h-64 md:h-80 mt-6">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
 
           {/* Bottom border */}
@@ -109,7 +113,7 @@ export function Projects() {
           viewport={{ once: true }}
           className="mt-16 md:mt-24"
         >
-          <a
+          <Link
             href="/portfolio"
             className="group inline-flex items-center gap-3"
           >
@@ -120,7 +124,7 @@ export function Projects() {
               {t("viewMore")}
             </span>
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
