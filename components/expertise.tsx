@@ -13,23 +13,23 @@ export function Expertise() {
   const expertises = [
     {
       id: "01",
-      title: t("items.interior.title"),
-      description: t("items.interior.description"),
+      title: t("items.painting.title"),
+      description: t("items.painting.description"),
     },
     {
       id: "02",
-      title: t("items.decorative.title"),
-      description: t("items.decorative.description"),
+      title: t("items.humidity.title"),
+      description: t("items.humidity.description"),
     },
     {
       id: "03",
-      title: t("items.exterior.title"),
-      description: t("items.exterior.description"),
+      title: t("items.furniture.title"),
+      description: t("items.furniture.description"),
     },
     {
       id: "04",
-      title: t("items.consulting.title"),
-      description: t("items.consulting.description"),
+      title: t("items.smoothing.title"),
+      description: t("items.smoothing.description"),
     },
   ];
 

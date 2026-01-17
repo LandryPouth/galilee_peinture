@@ -155,6 +155,61 @@ export default function WhyUs() {
         </div>
       </section>
 
+      {/* Loyalty Program Section */}
+      <section className="py-24 md:py-32 bg-white text-black">
+        <div className="container px-4 md:px-8">
+          <div className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-xs md:text-sm font-sans tracking-[0.2em] text-amber-600 uppercase block mb-4"
+            >
+              {t("loyalty_subtitle")}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className={cn(
+                "text-3xl md:text-5xl font-light",
+                playfair.className
+              )}
+            >
+              {t("loyalty_title")}
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {["offer", "discount", "gift"].map((key, index) => (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-stone-50 p-8 md:p-12 text-center group hover:bg-stone-900 hover:text-white transition-colors duration-500"
+              >
+                <div className="mb-6 text-amber-600 group-hover:text-amber-400 transition-colors duration-500 font-mono text-xl">
+                  0{index + 1}
+                </div>
+                <h3 className={cn(
+                  "text-xl md:text-2xl font-light mb-4",
+                  playfair.className
+                )}>
+                  {t(`loyalty_items.${key}.title`)}
+                </h3>
+                <p className="text-stone-500 group-hover:text-stone-300 font-light leading-relaxed transition-colors duration-500">
+                  {t(`loyalty_items.${key}.description`)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Visual Break / Team or Process - Parallax Effect */}
       <section className="relative h-[50vh] overflow-hidden">
         <Image

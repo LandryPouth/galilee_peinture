@@ -1,5 +1,7 @@
 # Project Overview
 
+> **Governance Mode**: Please refer to `.gemini/GOVERNANCE.md` for the currently active strictness rules and workflow constraints.
+
 This is a Next.js project for a painting company website, "Galilee Peinture". It's a modern, internationalized web application built with TypeScript and styled with Tailwind CSS. The project uses the Next.js App Router for routing and `next-intl` for internationalization, supporting both English and French languages.
 
 ## Building and Running
@@ -81,5 +83,3 @@ The project uses Tailwind CSS for styling. Utility classes are used directly in 
 ### Additional Coding Preferences
 
 - Always look for the [design system file](design_system.md) before creating a page or component to match the global system design
-- Always lint to check if there is an error, and if it is the case, try to fix it
-- Always run the development server to check if there is an error "pnpm run dev". And if it is the case, try to fix it. If the error is fixed, stop the server
