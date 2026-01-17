@@ -155,7 +155,23 @@
     },
     "cta_title": "PRÊT À TRANSFORMER VOTRE ESPACE ?",
     "cta_button": "COMMENCER LE PROJET",
-    "ambience_quote": "\"La couleur est la touche finale qui révèle l'architecture.\""
+    "ambience_quote": "\"La couleur est la touche finale qui révèle l'architecture.\"",
+    "loyalty_title": "PROGRAMME DE FIDÉLITÉ",
+    "loyalty_subtitle": "NOUS RÉCOMPENSONS VOTRE CONFIANCE",
+    "loyalty_items": {
+      "offer": {
+        "title": "OFFRE EXCLUSIVE",
+        "description": "Une prestation offerte toutes les 2 prestations achetées."
+      },
+      "discount": {
+        "title": "REMISES PROGRESSIVES",
+        "description": "Des remises avantageuses accordées selon le nombre de vos commandes."
+      },
+      "gift": {
+        "title": "CADEAU DE FIDÉLITÉ",
+        "description": "Dès votre 3ème appel à nos services, recevez un bonus ou une prestation gratuite de votre choix."
+      }
+    }
   },
   "ContactPage": {
     "hero_title": "DISCUTONS DE VOTRE PROJET",

@@ -156,7 +156,23 @@
     },
     "cta_title": "READY TO TRANSFORM YOUR SPACE?",
     "cta_button": "START THE PROJECT",
-    "ambience_quote": "\"Color is the final touch that reveals the architecture.\""
+    "ambience_quote": "\"Color is the final touch that reveals the architecture.\"",
+    "loyalty_title": "LOYALTY PROGRAM",
+    "loyalty_subtitle": "WE REWARD YOUR TRUST",
+    "loyalty_items": {
+      "offer": {
+        "title": "EXCLUSIVE OFFER",
+        "description": "One free service offered for every 2 services purchased."
+      },
+      "discount": {
+        "title": "PROGRESSIVE DISCOUNTS",
+        "description": "Advantageous discounts granted based on the number of your orders."
+      },
+      "gift": {
+        "title": "LOYALTY GIFT",
+        "description": "From your 3rd service request, receive a bonus or a free service of your choice."
+      }
+    }
   },
   "ContactPage": {
     "hero_title": "LET'S DISCUSS YOUR PROJECT",
