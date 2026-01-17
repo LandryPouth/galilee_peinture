@@ -89,23 +89,23 @@
     "no_projects": "Aucun projet trouvé."
   },
   "Expertise": {
-    "title": "NOTRE EXPERTISE",
+    "title": "NOS SERVICES",
     "items": {
-      "interior": {
-        "title": "PEINTURE INTÉRIEURE",
-        "description": "Application soignée de peintures acryliques, alkydes et écologiques pour sublimer vos pièces de vie."
+      "painting": {
+        "title": "PEINTURE MURALE",
+        "description": "Application de teintes souples et mates pour sublimer vos espaces et créer une atmosphère unique. Nous ressortons des couleurs pour l'embellissement de votre maison."
       },
-      "decorative": {
-        "title": "ENDUITS DÉCORATIFS",
-        "description": "Maîtrise des techniques de stucco, chaux, béton ciré et effets de matière pour des murs uniques."
+      "humidity": {
+        "title": "TRAITEMENT D'HUMIDITÉ",
+        "description": "Solutions d'étanchéité avancées pour assainir et protéger durablement vos murs contre l'humidité et la moisissure grâce à des produits sophistiqués."
       },
-      "exterior": {
-        "title": "PEINTURE EXTÉRIEURE",
-        "description": "Protection et embellissement de vos façades avec des produits résistants aux intempéries."
+      "furniture": {
+        "title": "DÉCORATION DE MOBILIER",
+        "description": "Une technique signature de Galilée Peinture pour sublimer bois et fer. Nous démontrons qu'il est possible d'utiliser la peinture pour toute sorte de matériaux."
       },
-      "consulting": {
-        "title": "CONSEIL DÉCO",
-        "description": "Accompagnement personnalisé dans le choix des couleurs et des harmonies pour créer l'ambiance idéale."
+      "smoothing": {
+        "title": "LISSAGE ET LAQUAGE",
+        "description": "Préparation minutieuse et enduits de lissage pour des murs parfaitement lisses et impeccables, révélant tout l'éclat et la beauté de la couleur."
       }
     }
   },

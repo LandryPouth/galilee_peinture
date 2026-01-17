@@ -90,23 +90,23 @@
     "no_projects": "No projects found."
   },
   "Expertise": {
-    "title": "OUR EXPERTISE",
+    "title": "OUR SERVICES",
     "items": {
-      "interior": {
-        "title": "INTERIOR PAINTING",
-        "description": "Careful application of acrylic, alkyd and eco-friendly paints to enhance your living spaces."
+      "painting": {
+        "title": "WALL PAINTING",
+        "description": "Application of soft, matte shades to enhance your spaces and create a unique atmosphere. We bring out colors for the embellishment of your home."
       },
-      "decorative": {
-        "title": "DECORATIVE COATINGS",
-        "description": "Mastery of stucco, lime, polished concrete techniques and material effects for unique walls."
+      "humidity": {
+        "title": "HUMIDITY TREATMENT",
+        "description": "Advanced waterproofing solutions to sanitize and permanently protect your walls against humidity and mold using sophisticated products."
       },
-      "exterior": {
-        "title": "EXTERIOR PAINTING",
-        "description": "Protection and beautification of your facades with weather-resistant products."
+      "furniture": {
+        "title": "FURNITURE DECORATION",
+        "description": "A signature technique by Galilée Peinture to enhance wood and iron. We demonstrate that it is possible to use paint for all kinds of materials."
       },
-      "consulting": {
-        "title": "DESIGN CONSULTING",
-        "description": "Personalized support in choosing colors and harmonies to create the ideal atmosphere."
+      "smoothing": {
+        "title": "SMOOTHING & LACQUERING",
+        "description": "Meticulous preparation and smoothing plaster for perfectly smooth and impeccable walls, revealing the full radiance and beauty of the color."
       }
     }
   },
